@@ -1,0 +1,262 @@
+#include<iostream>
+using namespace std;
+string clientes[4];
+string Empleados[4];
+string Servicios[4];
+
+void client();
+void Empl();
+void Serv();
+
+void insertListClien();
+void mostrarListClien();
+void actListClien();
+void elimListClien();
+
+void InsertListaEmpl();
+void MostrarListEmpl();
+void ActListEmpl();
+void ElimListEmpl();
+
+void InsertListaServ();
+void MostrarListSer();
+void ActListServ();
+void ElimListServ();
+
+int main(){
+	char res='s';
+		do{
+			int opc;
+			cout << "\n * * * [ MENU PRINCIPAL ] * * *";
+			cout<<"\n\n  1.-Clientes.";
+			cout<<"\n  2.-Empleados.";
+			cout<<"\n  3.-Servicios.";
+			cout<<"\n  4.-Fin del Programa.";
+			cout << "\n\n >> Elija una opcion : ";
+			cin>>opc;
+			switch(opc){
+				case 1:
+					client();
+					break;
+				case 2:
+					Empl();	
+					break;
+				case 3:
+					Serv();
+					break;
+				default:
+					res='n';
+                	break;
+			}
+		}while( res!='n');
+	return 0;
+}
+
+void client(){
+	char res ='s';
+
+	     do{
+		int opcion;
+		cout<<"\n\n *******************";
+		cout<<"\n   LISTA DE CLIENTES "<<endl;
+		cout<<"  -------------------"<<endl;
+		cout<<"   1.-Insertar	 : "<<endl;
+		cout<<"   2.-Mostrar	 : "<<endl;
+		cout<<"   3.-Actualizar : "<<endl;
+		cout<<"   4.-Eliminar	 : "<<endl;
+		cout<<"   5.-Menu Principal "<<endl;
+		cout<<"\n >> Seleccione una Opcion :  ";
+		cin>>opcion;
+		switch (opcion){ 
+			case 1:
+			    insertListClien();
+                break;
+			case 2:
+			    mostrarListClien();
+                break;
+			case 3:
+			    actListClien();
+			    break;
+			case 4:
+			    elimListClien();
+			    break;
+            break;
+			default:
+                res='n';
+                break;
+		}
+		
+	}while( res!='n');
+}
+    void insertListClien(){
+      for (int x=1;x<4;x++){
+        cout<<"\ningrese al cliente Nro "<<x<<": ";cin>>clientes[x];
+    }
+
+}
+    void mostrarListClien(){
+        cout<<"\n==================="<<endl;
+		cout<<"  ---Clientes---"<<endl;
+      for(int x=1;x<4;x++){
+    cout<<"Cliente "<<x<<": "<<clientes[x]<<endl;
+    }
+}
+    void actListClien(){
+    mostrarListClien();
+    int opcion;
+       string nuevo;
+        cout<<"\nselecciones la posicion del cliente: ";cin>>opcion;
+        cout<<"\ningrese el nuevo cliente: ";cin>>nuevo;
+    clientes[opcion]=nuevo;
+    
+}
+    void elimListClien(){
+    mostrarListClien();
+    int opcion;
+    cout<<"\ningrese la posicion del cliente: ";cin>>opcion;
+       for(int x=1;x<4;x++){
+        if(opcion==x){
+        clientes[x]="";
+    }
+}
+}
+
+
+void Empl(){
+	char res ='s';
+
+	     do{
+		int opcion;
+		cout<<"\n\n *******************";
+		cout<<"\n   LISTA DE EMPLEADOS "<<endl;
+		cout<<"  -------------------"<<endl;
+		cout<<"   1.-Insertar	 : "<<endl;
+		cout<<"   2.-Mostrar	 : "<<endl;
+		cout<<"   3.-Actualizar : "<<endl;
+		cout<<"   4.-Eliminar	 : "<<endl;
+		cout<<"   5.-Menu Principal ";
+		cout<<"\n >> Seleccione una Opcion :  ";
+		cin>>opcion;
+		switch (opcion){
+			case 1:
+			    InsertListaEmpl();
+                break;
+			case 2:
+			    MostrarListEmpl();
+                break;
+			case 3:
+			    ActListEmpl();
+			    break;
+			case 4:
+			    ElimListEmpl();
+			    break;
+            break;
+			default:
+                res='n';
+                break;
+		}
+		
+	}while( res!='n');
+}
+	void InsertListaEmpl(){
+      for (int Empl=1;Empl<4;Empl++){
+        cout<<"\nIngrese al Empleado Nro "<<Empl<<": ";cin>>Empleados[Empl];
+    }
+
+}
+    void MostrarListEmpl(){
+        cout<<"\n==================="<<endl;
+		cout<<"  ---Empleados---"<<endl;
+		for(int Empl=1;Empl<4;Empl++){
+    	cout<<"Empleado "<<Empl<<": "<<Empleados[Empl]<<endl;
+    }
+}
+    void ActListEmpl(){
+    MostrarListEmpl();
+    int opcion;
+       string nuevo;
+        cout<<"\nselecciones la posicion del Empleado: ";cin>>opcion;
+        cout<<"\ningrese el nuevo Empleado: ";cin>>nuevo;
+    Empleados[opcion]=nuevo;
+    
+}
+    void ElimListEmpl(){
+    MostrarListEmpl();
+    int opcion;
+    cout<<"\ningrese la posicion del Empleado: ";cin>>opcion;
+       for(int Empl=1;Empl<4;Empl++){
+        if(opcion==Empl){
+        Empleados[Empl]="";
+    }
+}
+}
+
+
+void Serv(){
+	char res ='s';
+
+	     do{
+		int opcion;
+		cout<<"\n\n *******************";
+		cout<<"\n   LISTA DE SERVICIOS "<<endl;
+		cout<<"  -------------------"<<endl;
+		cout<<"   1.-Insertar	 : "<<endl;
+		cout<<"   2.-Mostrar	 : "<<endl;
+		cout<<"   3.-Actualizar : "<<endl;
+		cout<<"   4.-Eliminar	 : "<<endl;
+		cout<<"   5.-Menu Principal ";
+		cout<<"\n >> Seleccione una Opcion :  ";
+		cin>>opcion;
+		switch (opcion){
+			case 1:
+			    InsertListaServ();
+                break;
+			case 2:
+			    MostrarListSer();
+                break;
+			case 3:
+			    ActListServ();
+			    break;
+			case 4:
+			    ElimListServ();
+			    break;
+            break;
+			default:
+                res='n';
+                break;
+		}
+		
+	}while( res!='n');
+}
+	void InsertListaServ(){
+      for (int Serv=1;Serv<4;Serv++){
+        cout<<"\nIngrese el Servicio Nro "<<Serv<<": ";cin>>Servicios[Serv];
+    }
+
+}
+    void MostrarListSer(){
+        cout<<"\n==================="<<endl;
+		cout<<"  ---Servicios---"<<endl;
+		for(int Serv=1;Serv<4;Serv++){
+    	cout<<"Servicio "<<Serv<<": "<<Servicios[Serv]<<endl;
+    }
+}
+    void ActListServ(){
+    MostrarListSer();
+    int opcion;
+       string nuevo;
+        cout<<"\nselecciones la posicion del Servicio: ";cin>>opcion;
+        cout<<"\ningrese el nuevo Servicio: ";cin>>nuevo;
+    Servicios[opcion]=nuevo;
+    
+}
+    void ElimListServ(){
+    MostrarListSer();
+    int opcion;
+    cout<<"\ningrese la posicion del Servicio: ";cin>>opcion;
+       for(int Serv=1;Serv<4;Serv++){
+        if(opcion==Serv){
+        Servicios[Serv]="";
+    }
+}
+}
